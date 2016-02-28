@@ -16,6 +16,7 @@ class SortedInReverseOrderingSpec extends FunSpec with Matchers {
       (reverseSortedInts shouldBe (sorted)) (inReverseOrder)
       reverseSortedInts.shouldBe(sorted)(inReverseOrder)
       reverseSortedInts.shouldBe(sorted)(Sortable.sortableNatureOfSeq[Int, List](implicitly[Ordering[Int]].reverse))
+      reverseSortedInts.reverse shouldBe sorted
     }
   }
 
