@@ -6,6 +6,10 @@ version := "0.1.0-SNAPSHOT"
 
 scalaVersion := "2.11.7"
 
+lazy val depProj = (project in file("."))
+  .dependsOn(file("../dep-proj"))
+  .dependsOn(file("../dep-proj") % "test->test")
+
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 )
