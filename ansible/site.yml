@@ -1,0 +1,9 @@
+---
+- hosts: test
+  remote_user: vagrant
+  sudo: yes
+  roles:
+    - common
+  tags:
+    - common
+

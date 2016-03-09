@@ -1,0 +1,30 @@
+---
+- name: echo
+  command: echo "hello world"
+
+- name: stop firewalld
+  command: systemctl stop firewalld
+
+- name: disable firewalld
+  command: systemctl disable firewalld
+
+- name: check whether /etc/sysconfig/network-scripts/ifcfg-eth0 contains DNS1
+  command: grep -Gq "^DNS1" /etc/sysconfig/network-scripts/ifcfg-enp0s8
+  register: check_DNS1
+  always_run: yes
+  ignore_errors: yes
+  changed_when: no
+
+- name: set DNS1
+  lineinfile: dest=/etc/sysconfig/network-scripts/ifcfg-enp0s8 insertafter=EOF line=DNS1=8.8.8.8
+  when: check_DNS1.rc != 0
+
+- name : systemctl restart network
+  command: systemctl restart network
+
+- name: install modules
+  yum: name={{ item }} state=present
+  with_items:
+    - git
+    - vim
+
