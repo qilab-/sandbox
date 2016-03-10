@@ -2,11 +2,11 @@
 #- name: echo
 #  command: echo "hello world"
 
-#- name: stop firewalld
-#  command: systemctl stop firewalld
+- name: stop firewalld
+  command: systemctl stop firewalld
 
-#- name: disable firewalld
-#  command: systemctl disable firewalld
+- name: disable firewalld
+  command: systemctl disable firewalld
 
 #- name: check whether /etc/sysconfig/network-scripts/ifcfg-eth0 contains DNS1
 #  command: grep -Gq "^DNS1" /etc/sysconfig/network-scripts/ifcfg-enp0s8

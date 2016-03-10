@@ -4,6 +4,15 @@
   sudo: yes
   roles:
     - common
+    - oracle_jdk8
   tags:
     - common
+
+- hosts: test
+  remote_user: vagrant
+  sudo: yes
+  roles:
+    - cdh_common
+  tags:
+    - hadoop
 
