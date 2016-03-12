@@ -11,3 +11,8 @@ dependencies:
     #- docker build -f test/Dockerfile-centos6 -t centos6 .
     - docker run centos:6.7 echo 'hello'
 
+test:
+  override:
+    #- docker run -i centos:6.7 sh ./vagrant-ansible/provision.sh --privileged
+    - docker run -v `pwd`/vagrant-ansible:/ansible centos:6.7 sh /ansible/provision.sh
+
