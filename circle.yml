@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker version
+
+    #- docker pull centos:6.7
+    #- docker build -f test/Dockerfile-centos6 -t centos6 .
+    - docker run centos:6.7 echo 'hello'
+
