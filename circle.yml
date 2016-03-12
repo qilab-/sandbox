@@ -14,5 +14,5 @@ dependencies:
 test:
   override:
     #- docker run -i centos:6.7 sh ./vagrant-ansible/provision.sh --privileged
-    - docker run -v `pwd`/vagrant-ansible:/ansible centos:6.7 sh /ansible/provision.sh
+    - docker run -v `pwd`:/ansible centos:6.7 sh /ansible/vagrant-ansible/provision.sh
 
