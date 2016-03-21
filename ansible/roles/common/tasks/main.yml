@@ -1,6 +1,7 @@
 ---
 - name: echo ansible_distribution, ansible_distribution_major_version, ansible_distribution_version
-  debug: msg="ansible_distribution {{ ansible_distribution }}"#, ansible_distribution_major_version: {{ ansible_distribution_major_version }}, ansible_distribution_version: {{ ansible_distribution_version }}"
+  debug: msg={{ ansible_distribution }}
+  #debug: msg="ansible_distribution: '{{ ansible_distribution }}', ansible_distribution_major_version: '{{ ansible_distribution_major_version }}', ansible_distribution_version: '{{ ansible_distribution_version }}'"
 
 #- name: echo
 #  command: echo "hello world"
