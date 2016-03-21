@@ -3,7 +3,9 @@
   #debug: msg={{ ansible_distribution }}
   debug: msg="ansible_distribution = {{ ansible_distribution }}, ansible_distribution_major_version = {{ ansible_distribution_major_version }}, ansible_distribution_version = {{ ansible_distribution_version }}"
   #debug: msg="System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
-  include: {{ ansible_distribution }}_{{ ansible_distribution_major_version }}.yml
+
+- name: include test
+  include: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}.yml"
 
 #- name: echo
 #  command: echo "hello world"
