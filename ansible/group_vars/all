@@ -12,4 +12,3 @@ mysql_connector_java_url: "http://cdn.mysql.com/Downloads/Connector-J/{{ mysql_c
 mysql_connector_java_archive: "{{ download_folder }}/{{ mysql_connector_java_file }}"
 mysql_connector_java_home: "{{ download_folder }}/mysql-connector-java-{{ mysql_connector_java_version }}"
 mysql_connector_java_jar: "{{ mysql_connector_java_home }}/mysql-connector-java-{{ mysql_connector_java_version }}-bin.jar"
-
