@@ -8,11 +8,12 @@ dependencies:
     - docker version
 
     #- docker pull centos:6.7
-    #- docker build -f test/Dockerfile-centos6 -t centos6 .
-    - docker run centos:6.7 echo 'hello'
+    - docker build -f test/Dockerfile-centos6 -t centos6 .
+    #- docker run centos:6.7 echo 'hello'
 
 test:
   override:
     #- docker run -i centos:6.7 sh ./vagrant-ansible/provision.sh --privileged
-    - docker run -v `pwd`:/test_ansible centos:6.7 sh /test_ansible/test_provision.sh
+    #- docker run -v `pwd`:/test_ansible centos:6.7 sh /test_ansible/test_provision.sh
+    - docker run -v `pwd`:/test_ansible centos6 ansible-playbook -i /test_ansible/ansible/hosts /test_ansible/ansible/site.yml --connection=local
 
