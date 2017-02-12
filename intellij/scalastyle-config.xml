@@ -1,0 +1,7 @@
+<scalastyle>
+  <check level="error" class="org.scalastyle.scalariform.MethodLengthChecker" enabled="true">
+    <parameters>
+      <parameter name="maxLength"><![CDATA[50]]></parameter>
+    </parameters>
+  </check>
+</scalastyle>
