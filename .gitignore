@@ -1,0 +1,8 @@
+.DS_Store
+target
+.idea
+.vagrant
+*.jar
+*.log
+dump.rdb
+*.class
