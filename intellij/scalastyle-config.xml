@@ -1,7 +1,0 @@
-<scalastyle>
-  <check level="warning" class="org.scalastyle.scalariform.MethodLengthChecker" enabled="false">
-    <parameters>
-      <parameter name="maxLength">50</parameter>
-    </parameters>
-  </check>
-</scalastyle>
