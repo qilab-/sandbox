@@ -11,6 +11,7 @@ lazy val depProj = (project in file("."))
   .dependsOn(file("../dep-proj") % "test->test")
 
 libraryDependencies ++= Seq(
+  "org.specs2" %% "specs2-core" % "3.8.9" % "test",
   "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 )
 
